@@ -1,0 +1,1544 @@
+@charset "UTF-8";
+/* reset */
+ body, h1, h2, h3, h4, h5, h6, p, address,
+ ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  text-align: left;
+  list-style-type: none;
+  border-collapse: collapse;
+ }
+
+ textarea { font-size: 100%; vertical-align:middle;}
+ img { border-style: none; display: block; }
+ hr { display: none; }
+ em{font-style: normal}
+ input{line-height:auto;vertical-align:middle;}
+ strong.more{color:#c30}
+ a{text-decoration: none;}
+
+ html {
+
+ }
+
+ body {
+   font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Meiryo','ＭＳ Ｐゴシック',sans-serif;
+ }
+
+ * {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   -o-box-sizing: border-box;
+   -ms-box-sizing: border-box;
+   box-sizing: border-box;
+ }
+
+/* 上の部分は気にせずここから書く */
+
+/* ─── 共通 ──────────────────────── */
+body{
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.main{
+   flex: 1
+}
+
+.wrap{
+  width: 95%;
+  margin: 0 auto;
+}
+
+a{
+  color: inherit;;
+}
+
+a:hover{
+  filter: brightness(0.7);
+}
+
+button:hover{
+  filter: brightness(0.7);
+}
+
+h2 {
+  font-size:3em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: transparent;
+	background : rgba(0,0,0,1);
+	text-shadow :
+		0 0 0.1em rgba(255,255,255,0.05),
+		0.01em 0.04em 0.03em rgba(255,255,255,0.4);
+	-webkit-background-clip : text;
+  margin-bottom: 30px;
+}
+
+.more{
+  text-align: right;
+  margin-top: 10px;
+  margin-right: 20px;
+  color: #fff;
+}
+
+.more a{
+  font-size: 1.5rem;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+.back_img{
+  background-color: #292929;
+}
+
+
+/* ─── ヘッダー ──────────────────────── */
+.header{
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.header .navi{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .hamburger{
+  width: 100px;
+  height: 100px;
+  z-index: 11;
+  cursor: pointer;
+}
+
+.off{
+  display: none;
+}
+
+.header .hamburger img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header .logo{
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow:
+		0 0.01em 0 #999,
+		0 0.02em 0 #888,
+		0 0.03em 0 #777,
+		0 0.04em 0 #666,
+		0 0.05em 0 #555,
+		0 0.06em 0 #444,
+		0 0.08em 0 #000;
+}
+
+.header .menu{
+  position: fixed;
+  top: 0;
+	right: -70%;
+	width: 35%;
+	height: 100vh;
+	background-color: rgba(255,255,255,0.8);
+	z-index: 9;
+	padding-top: 100px;
+	transition: 0.1s;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+}
+
+.header .menu p{
+  text-align: center;
+}
+
+.header .menu .user{
+  width: 100%;
+  height: 30%;
+  margin: 0 auto;
+}
+
+.header .menu .user .icon{
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.header .menu .user .icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 5px auto;
+  border-radius: 100px;
+}
+
+.header .menu .user .name{
+  max-width: 50%;
+  margin: 10px auto;
+  background-color: #2cb4ad80;
+  border-radius: 30px;
+  padding: 0px;
+  border-bottom: solid #2cb4ad 3px;
+  text-align: center;
+  color: #fff;
+}
+
+.header .menu .user .login{
+  width: 100%;
+  margin: 0 auto;
+  color: #2cb4ad;
+  filter: brightness(0.7);
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: solid 1px gray;
+}
+
+.header .menu .navi ul{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+}
+
+.header .open{
+  right: 0;
+  transition: 0.1s;
+}
+
+.fixed {
+  overflow: hidden;
+}
+
+
+/* ─── フッター ──────────────────────── */
+.footer{
+  width: 100%;
+  height: 100px;
+  margin-top: 100px;
+  background-color: #2cb4ad;
+}
+
+.footer p{
+  text-align: center;
+  line-height: 100px;
+}
+
+.footer img{
+  width: 100%;
+}
+
+.footer .top{
+  width: 15px;
+  position: fixed;
+  bottom: 135px;
+  left: 61px;
+  z-index: 8;
+  height: 40px;
+}
+
+.footer .top-anime{
+  height: 70%;
+  transition: 1s;
+}
+
+.footer .line{
+  height: 0;
+  position: fixed;
+  bottom: 150px;
+  left: 66.5px;
+  border-left : 3px solid #000;
+  z-index: 7;
+}
+
+.footer .line-anime{
+  height: 67%;
+  transition: 1s;
+}
+
+.footer .bottom{
+  width: 100px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  left: -10px;
+  z-index: 8;
+}
+
+
+/* ─── トップ ──────────────────────── */
+.top_img{
+  overflow: hidden
+}
+
+.top_img img{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  animation: top_anime 5s ease-in-out forwards;
+}
+
+@keyframes top_anime {
+  100% { transform: scale(1.1)}
+}
+
+.top_title{
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+  margin: auto;
+}
+
+.top_title p{
+  color: #fff;
+  font-size: 500%;
+  text-align: center;
+  font-weight: bold;
+  text-shadow:
+		0 0.01em 0 #999,
+		0 0.02em 0 #888,
+		0 0.03em 0 #777,
+		0 0.04em 0 #666,
+		0 0.05em 0 #555,
+		0 0.06em 0 #444,
+		0 0.08em 0 #000;
+}
+
+
+/* ─── ログイン ──────────────────────── */
+
+.login{
+  margin-top: 100px;
+}
+
+.login .ctr{
+  width: 60%;
+  margin: 0 auto;
+  background-color: rgba(255,255,255,0.9);
+  border: solid #2cb4ad 5px;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.login dd {
+  margin-top: 30px;
+  border-radius: 10px;
+  border-bottom: solid #2cb4ad 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login dd p{
+  width: 10%
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+.login dd input{
+  width: 90%;
+  height: 50px;
+  border: none;
+  outline:none;
+  background: transparent;
+  padding: 15px;
+  margin-left: auto;
+}
+
+.login .submit dd{
+  border: none;
+}
+
+.login .submit button{
+  width: 100%;
+  height: 50px;
+  margin: 0 30px;
+  background-color: #2cb4ad80;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.login .password_reset dd{
+  border: none;
+}
+
+.login .password_reset .reset{
+  border-radius: 10px;
+  border-bottom: solid #2cb4ad 1px;
+}
+
+.login .password_reset .resetComp{
+  width: 100%;
+  height: 50px;
+  margin: 0 30px;
+  background-color: #2cb4ad80;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.login .password_reset button{
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.login span p{
+  color: red;
+  margin: 10px;
+}
+
+
+/* ─── メイン ──────────────────────── */
+
+/* 背景 */
+.back_img{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+
+.back_img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+
+
+/* 投稿一覧 */
+.post_top{
+  width: 80%;
+  margin-top: 100px;
+  padding: 30px;
+}
+
+.post_top .ctr{
+  max-width: 100%;
+  height: 300px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+::-webkit-scrollbar{
+   height: 10px;
+}
+
+::-webkit-scrollbar-track{
+   background-color: rgba(255,255,255,0.3);
+   border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+   background-color: #2cb4ad;
+   border-radius: 5px;
+}
+
+.post_top img{
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* 発売日 */
+.release{
+  width: 80%;
+  margin-top: 100px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50px;
+  padding: 30px;
+}
+
+.release .sort{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.release .submit{
+  width: 50px;
+  margin-left: auto;
+}
+
+.release .submit button{
+  margin-right: 5px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.release .sort select{
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+.release .sort input{
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+.release .data{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.release .data table{
+  margin-bottom: 30px;
+}
+
+.release .data th{
+  text-align: center;
+  color: #000;
+}
+
+.release .data td{
+  text-align: center;
+  background-color: #2cb4ad;
+  color: #fff;
+}
+
+.release .data .calendar_img{
+  width: 200px;
+  height: 300px;
+}
+
+.release .data img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.release h3{
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  border-bottom: solid #2cb4ad 2px;
+  margin: 30px 0;
+}
+
+.release .data p{
+  cursor: pointer;
+}
+
+.release .data .liked{
+  color: red;
+}
+
+.release .data span{
+  display: none;
+}
+
+
+/* お知らせ  */
+.info{
+  width: 80%;
+  margin-top: 100px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50px;
+  padding: 30px;
+}
+
+.info table{
+  width: 100%;
+  margin: 30px 0;
+}
+
+.info tr{
+  border-bottom: solid #2cb4ad 2px;
+}
+
+.info th{
+  width: 20%;
+  text-align: center;
+  background-color: #2cb4ad;
+  border-radius: 20px;
+}
+
+.info td{
+  width: 80%;
+  padding: 0 30px;
+  text-align: left;
+}
+
+
+/* ─── ユーザーページ ──────────────────────── */
+.user_page{
+  margin-top: 100px;
+}
+
+.user_page .icon img{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin: 5px auto;
+  border-radius: 150px;
+}
+
+.user_page .name{
+  display: flex;
+  justify-content: center;
+}
+
+.user_page .name button{
+  width: 100%;
+  margin: 30px auto;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  background-color: #2cb4ad80;
+  border: none;
+  border-radius: 50px;
+  padding: 5px 30px;
+  border-bottom: solid #2cb4ad 3px;
+  cursor: pointer;
+}
+
+.user_page .name p{
+  max-width: 20%;
+  margin: 30px auto;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  background-color: #2cb4ad80;
+  border-radius: 50px;
+  padding: 5px 30px;
+  border-bottom: solid #2cb4ad 3px;
+}
+
+.user_page .comment p{
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.user_page .new{
+  display: flex;
+  justify-content: center;
+}
+
+.user_page .new button{
+  font-size: 1.5rem;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.webmaster_edit p{
+  margin-top: 30px;
+  text-align: right;
+}
+
+.webmaster_edit a{
+  color: #fff;
+  font-size: 1.5rem;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+.user_page_back{
+  text-align: center;
+  margin: 50px 0;
+}
+
+.user_page_back a{
+  color: #fff;
+  font-size: 1.5rem;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+
+/* ─── ユーザーページ(詳細) ──────────────────────── */
+.user_page .data{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.user_page .data tr{
+  width: 100%;
+  background-color: rgba(255,255,255,0.5);
+  border: solid #2cb4ad 1px;
+}
+
+.user_page .data th{
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.user_page .data td{
+  text-align: center;
+}
+
+.user_page .edit{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.user_page .edit button{
+  font-size: 1.5rem;
+  margin: 0 20px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user_page .back{
+  text-align: center;
+}
+
+.user_page .back a{
+  color: #fff;
+  font-size: 1.5rem;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+/* ─── ユーザーページ(編集) ──────────────────────── */
+.user_page .ctr{
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(255,255,255,0.9);
+  border: solid #2cb4ad 5px;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.user_page .ctr .icon img{
+  width: 100px;
+  height: 100px;
+}
+
+.user_page .ctr .icon button{
+  width: 70px;
+  cursor: pointer;
+  margin: 0 auto 10px 20%;
+}
+
+.user_page .ctr dd {
+  margin-top: 30px;
+  border-radius: 10px;
+  border-bottom: solid #2cb4ad 1px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.user_page .ctr dd p{
+  width: 10%
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+.user_page .ctr dd input{
+  width: 80%;
+  height: 50px;
+  border: none;
+  outline:none;
+  background: transparent;
+  padding: 15px 0;
+}
+
+.user_page .ctr .submit button{
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+  background-color: #2cb4ad80;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.user_page .ctr .back a{
+  color: #000;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+.user_page span p{
+  color: red;
+  margin: 10px;
+}
+
+/* ─── 投稿一覧 ──────────────────────── */
+
+.posts{
+  width: 80%;
+  margin-top: 100px;
+}
+
+.posts .sort{
+  display: flex;
+  justify-content: flex-start;
+  margin: 50px;
+}
+
+.posts .sort button{
+  font-size: 1.5rem;
+  margin-right: 5px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.posts .sort .submit{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+  border: solid #2cb4ad 3px;
+  border-radius: 5px;
+  margin: auto 0 auto auto;
+}
+
+.posts .sort .submit input{
+  border: none;
+  background: transparent;
+  padding: 5px;
+  color: #fff;
+}
+
+.posts .sort .submit button{
+  font-size: 1.5rem;
+  margin-right: 5px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.posts .data{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.posts .data table{
+  width: 20%;
+  height: 200px;
+}
+
+.posts .data td{
+  height: 30px;
+  text-align: center;
+  background-color: #2cb4ad;
+  color: #fff;
+}
+
+.posts .data img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.posts .data p{
+  cursor: pointer;
+}
+
+.posts .data .liked{
+  color: red;
+}
+
+.posts .data span{
+  display: none;
+}
+
+
+/* ─── 投稿詳細 ──────────────────────── */
+.post_detail{
+  margin-top: 100px;
+  width: 70%;
+}
+
+.post_detail img{
+  max-width: 100%;
+  max-height: 500px;
+  margin: 100px auto;
+}
+
+.post_detail dt{
+  text-decoration: underline #2cb4ad80;
+  padding-bottom: 15px;
+}
+
+.post_detail .status{
+  display: flex;
+  justify-content: space-between;
+}
+
+.post_detail .status .user button{
+  width: 100%;
+  margin: 30px auto;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  background-color: #2cb4ad80;
+  border: none;
+  border-radius: 50px;
+  padding: 5px 30px;
+  border-bottom: solid #2cb4ad 3px;
+  cursor: pointer;
+}
+
+.post_detail .status .ctr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post_detail .status .ctr .data{
+  margin: 0 30px;
+}
+
+.post_detail .comment{
+  margin: 30px 0;
+}
+
+.post_detail .status .ctr,.post_detail .comment,.post_detail .tag{
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50px;
+  padding: 30px;
+}
+
+.post_detail .edit{
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.post_detail .edit button{
+  font-size: 1.5rem;
+  margin-right: 5px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.post_detail .back{
+  text-align: center;
+  margin: 30px 0;
+}
+
+.post_detail .back a{
+  color: #fff;
+  font-size: 1.5rem;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+.post_detail .back button{
+  font-size: 1.5rem;
+  margin-right: 5px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.post_detail .ctr p{
+  cursor: pointer;
+}
+
+.post_detail .ctr .liked{
+  color: red;
+}
+
+
+/* ─── 投稿(新規) ──────────────────────── */
+.post_new{
+  margin-top: 100px;
+}
+
+.post_new .ctr{
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(255,255,255,0.9);
+  border: solid #2cb4ad 5px;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.post_new .ctr dt{
+  font-size: 1.5rem;
+  text-decoration: underline #2cb4ad 3px;
+  padding-bottom: 15px;
+}
+
+.post_new .ctr button{
+  margin: 15px 0;
+}
+
+.post_new .thumbnail, .post_new .comment, .post_new .tag, .post_new .status, .post_new .images, .post_new .newPost, .post_new .back{
+  padding: 30px;
+}
+
+.post_new .comment textarea{
+  width: 100%;
+  height: 300px;
+  background-color: transparent;
+  padding: 5px;
+}
+
+.post_new .tag_ctr{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post_new .tag_ctr textarea{
+  width: 90%;
+  height: 30px;
+  background-color: transparent;
+  padding: 5px;
+}
+
+.post_new .images dd{
+  margin-bottom: 10px;
+}
+
+.post_new .newPost button{
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  margin-right: 5px;
+  background-color: #2cb4ad80;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.post_new .back a{
+  font-size: 1.5rem;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+.post_new  img{
+  width: 50%;
+  height: auto;
+  margin: 10px auto;
+}
+
+.post_new span p{
+  color: red;
+  margin: 10px;
+}
+
+/* ─── 投稿(編集) ──────────────────────── */
+.post_new .thumbnail img{
+  width: 50%;
+  height: auto;
+  margin: 10px auto;
+}
+
+.post_new .images img{
+  width: 50%;
+  height: auto;
+  margin: 10px auto;
+}
+
+
+/* ─── カレンダー(詳細) ──────────────────────── */
+.calendar{
+  margin-top: 100px;
+}
+
+.calendar img{
+  width: 300px;
+  height: auto;
+  margin: 50px auto;
+}
+
+.calendar .links{
+  width: 60%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar .links a{
+  font-size: 1.5rem;
+  color: #fff;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+.calendar .link button{
+  font-size: 1.5rem;
+  margin-right: 5px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calendar .data{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.calendar .data tr{
+  width: 100%;
+  background-color: rgba(255,255,255,0.5);
+  border: solid #2cb4ad 1px;
+}
+
+.calendar .data th{
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.calendar .data td{
+  text-align: center;
+}
+
+.calendar .edit{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.calendar .edit button{
+  font-size: 1.5rem;
+  margin-right: 5px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calendar .back{
+  text-align: center;
+  margin: 30px 0;
+}
+
+.calendar .back a{
+  font-size: 1.5rem;
+  color: #fff;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+.calendar .links .likeCalendar,.calendar .links .like{
+  width: 20px;
+  height: 20px;
+  background-color: #2cb4ad;
+  border-radius: 5px;
+
+}
+
+.calendar .links .likeCalendar p,.calendar .links .like p{
+  cursor: pointer;
+  text-align: center;
+}
+
+.calendar .links .liked{
+  color: red;
+}
+
+.calendar .links span{
+  display: none;
+}
+
+
+/* ─── カレンダー(新規) ──────────────────────── */
+.calendar_new{
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(255,255,255,0.9);
+  border: solid #2cb4ad 5px;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.calendar_new img{
+  width: 50%;
+  height: auto;
+  margin: 10px auto;
+}
+
+.calendar_new dd {
+  margin-top: 30px;
+  border-radius: 10px;
+  border-bottom: solid #2cb4ad 1px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.calendar_new dd p{
+  width: 10%
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+.calendar_new dd input{
+  width: 80%;
+  height: 50px;
+  border: none;
+  outline:none;
+  background: transparent;
+  padding: 15px 0;
+}
+
+.calendar_new .submit button{
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+  background-color: #2cb4ad80;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.calendar_new .back{
+  text-align: left;
+  margin: 0;
+}
+
+.calendar_new .back a{
+  color: #000;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+.calendar_new .thumbnail button{
+  width: 70px;
+  cursor: pointer;
+  margin: 0 auto 10px 20%;
+}
+
+.calendar_new span p{
+  color: red;
+  margin: 10px;
+}
+
+
+/* ─── お知らせ ──────────────────────── */
+.infos{
+  margin-top: 100px;
+  width: 80%;
+}
+
+.infos table{
+  width: 100%;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 30px;
+  margin: 30px 0;
+}
+
+.infos tr{
+  padding: 30px 0;
+}
+
+.infos th{
+  width: 20%;
+  padding: 10px;
+  text-align: center;
+}
+
+.infos td{
+  padding: 10px;
+  text-align: left;
+}
+
+.infos .title{
+  width: 60%;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.infos .status{
+  width: 10%;
+  padding: 10px;
+  text-align: right;
+}
+
+.infos .edit{
+  width: 10%;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.infos button{
+  background: transparent;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.infos .submit form{
+  text-align: right;
+}
+
+
+/* ─── お知らせ(編集) ──────────────────────── */
+.infos .titleEdit input{
+  width: 90%;
+  height: 10px;
+  border: solid 1px;
+  outline: none;
+  background: transparent;
+  padding: 15px;
+}
+
+.infos textarea{
+  width: 90%;
+  height: 50px;
+  border: solid 1px;
+  outline: none;
+  background: transparent;
+  padding: 15px;
+}
+
+.infos .new{
+  margin-bottom: 100px;
+}
+
+.infos h3{
+  font-size: 1.5rem;
+  text-decoration: underline #2cb4ad 3px;
+  padding-bottom: 5px;
+  color: #fff;
+}
+
+.infos span p{
+  color: red;
+  margin: 10px;
+}
+
+.infos .titleEdit{
+  width: 40%;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.infos .statusEdit{
+  width: 25%;
+  padding: 10px;
+  text-align: right;
+}
+
+.infos .editEdit{
+  width: 15%;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.infos .back{
+  text-align: center;
+  margin: 30px 0;
+}
+
+.infos .back a{
+  font-size: 1.5rem;
+  color: #fff;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+
+/* ─── お問い合わせ(一覧) ──────────────────────── */
+.contact_view{
+  margin-top: 100px;
+}
+
+.contact_view .ctr{
+  width: 70%;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 15px;
+  margin: 30px auto;
+  padding: 30px;
+}
+
+.contact_view dd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-bottom: solid #2cb4ad 1px;
+}
+
+.contact_view dd h3 {
+  width: 15%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.contact_view dd p {
+  width: 85%;
+  text-align: left;
+  padding: 0 15px;
+}
+
+.contact_view .submit dd{
+  border: none;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+
+.contact_view .submit button{
+  background: transparent;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.contact_view .submit select{
+  background: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact_view .back{
+  text-align: center;
+}
+
+.contact_view .back a{
+  color: #fff;
+  font-size: 1.5rem;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+
+/* ─── お問い合わせ(入力) ──────────────────────── */
+.contact_new{
+  margin-top: 100px;
+}
+
+.contact_new .ctr{
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(255,255,255,0.9);
+  border: solid #2cb4ad 5px;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.contact_new dd {
+  margin-top: 30px;
+  border-radius: 10px;
+  border-bottom: solid #2cb4ad 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_new dd h3{
+  width: 20%
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+.contact_new dd input{
+  width: 80%;
+  height: 50px;
+  border: none;
+  outline:none;
+  background: transparent;
+  padding: 15px;
+  margin-left: auto;
+}
+
+.contact_new dd textarea{
+  width: 80%;
+  height: 100px;
+  border: none;
+  outline:none;
+  background: transparent;
+  padding: 15px;
+  margin-left: auto;
+}
+
+.contact_new .submit dd{
+  border: none;
+}
+
+.contact_new .submit button{
+  width: 100%;
+  height: 50px;
+  margin: 0 30px;
+  background-color: #2cb4ad80;
+  border: none;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.contact_new .submit a{
+  font-size: 1.5rem;
+  border-bottom: solid #2cb4ad 3px;
+  border-radius: 5px;
+}
+
+.contact_new span p{
+  color: red;
+  margin: 10px;
+}
